@@ -1,1 +1,1 @@
-## _JS Course tasks_
+## _✨JS Course tasks✨_
