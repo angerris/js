@@ -211,6 +211,18 @@ function numOfType() {
   );
 }
 
+//15
+function sumOfLength() {
+  let arr = ["anymore", "raven", "me", "communicate"];
+  let newArr = [];
+  for (i of arr) {
+    newArr.push(i.length);
+  }
+  let min = Math.min.apply(null, newArr);
+  let max = Math.max.apply(null, newArr);
+  console.log(min + max);
+}
+
 //16
 function findNumber() {
   let myArray = [21, -9, 15, 2116, -71, 33];
