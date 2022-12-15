@@ -1,20 +1,4 @@
-// try to write a the following loop with while and do-while:
-// for (var i = 0; i < a.length; i++) {
-//   console.log("for", i, a[i]);
-// }
-let i = 0;
-while (i < 5) {
-  i++;
-  console.log(i);
-}
-
-do {
-  i++;
-  console.log(i);
-} while (i < 5);
-
 //1  Given a number. Print “odd” if the number is odd and “even” if itʼs even.
-
 let oddEven = prompt("enter a number please", 0);
 
 if (oddEven % 2 === 0) {
@@ -24,7 +8,8 @@ if (oddEven % 2 === 0) {
 } else {
   prompt("enter a number please", 0);
 }
-// 2 Given two variables, which are the angles of a triangle. Find the third angle of the triangle.
+
+//2 Given two variables, which are the angles of a triangle. Find the third angle of the triangle.
 let triangleSum = 180;
 let firstNum = +prompt("enter first angle degree");
 let secondNum = +prompt("enter second angle degree");
@@ -33,6 +18,7 @@ while (firstNum + secondNum < triangleSum) {
   alert(triangleSum - firstNum - secondNum);
   if (firstNum + secondNum < triangleSum) break;
 }
+
 //3 Given a positive integer. Bring the last digit of the numberto the beginning. Print the new number. If the
 // last digit of the inserted numberis 0, numberremains the same.
 function toEndFirst() {
@@ -64,7 +50,6 @@ if (ifMultiple % three === 0) {
   alert("number is not a multiple of 3,5 or 7");
 }
 // 5 Given three numbers. Sort them by the ascending order.
-
 let newArr = [46, 26, 78];
 let arr = [23, -456, 0];
 console.log(newArr, arr);
@@ -74,7 +59,51 @@ arr.sort(compareFunction);
 console.log(newArr, arr);
 
 function compareFunction(a, b) {
-  return a - b; //??
+  return a - b;
+}
+//6 prosto ostavlyu eto zdes
+let myArray = [-14, 5, 0];
+let mySecArray = [-8, 9, -6];
+let myThirdArray = [4, 19, -2];
+
+for (let i of myArray) {
+  if (Math.sign(i) == 0) {
+    console.log("unsigned");
+  }
+}
+
+for (let p of mySecArray) {
+  if (Math.sign(p) == 1) {
+    console.log("+");
+  }
+}
+for (let n of myThirdArray) {
+  if (Math.sign(n) == -1) {
+    console.log("-");
+  }
+}
+
+//7 Insert a digit and a number. Check whetherthe digits contains in the number or not.
+function checkIfContains() {
+  let firstNum = "2463";
+  let secondNum = "4";
+  let thirdNum = "45689";
+
+  if (firstNum.includes(5)) {
+    console.log("yes");
+  } else {
+    console.log("no");
+  }
+  if (secondNum.includes(6)) {
+    console.log("yes");
+  } else {
+    console.log("no");
+  }
+  if (thirdNum.includes(8)) {
+    console.log("yes");
+  } else {
+    console.log("no");
+  }
 }
 
 // 8 Enter a number. Reverse its first and last digits. Print the new number.
@@ -91,14 +120,28 @@ reverse();
 
 // 9 Insert a number. Print ‘yesʼ if the number is prime, ‘noʼ otherwise.
 let n = prompt("enter a number");
-if (n % 2 > 0 && n > 1) {
-  alert("yes");
+if (n == 2 || n == 3 || n == 5 || n == 7) {
+  alert("yes it is prime");
+} else if (n % 2 > 0 && n % 3 > 0 && n % 5 > 0 && n % 7 > 0 && n > 1) {
+  alert("yes it is prime");
 } else {
-  alert("no");
+  alert("no it's not prime");
 }
+//10
+function fibonacci() {
+  let firstNum = 0;
+  let secondNum = 1;
+  for (i = 0; i < 10; i++) {
+    let sum = firstNum + secondNum;
+    firstNum = secondNum;
+    secondNum = sum;
+    console.log(secondNum);
+  }
+}
+fibonacci();
+
 // 12 Given a sentence with missing words and an array of words. Replace all ‘_ʼ in a sentence with the words
 // from the array.
-
 let firstStr = "_, we have a _.";
 let firstArr = ["Houston", "problem"];
 let prosto1 = firstStr.replace(/_/, firstArr[0]);
@@ -120,6 +163,41 @@ let prosto8 = prosto7.replace(/_/, thirdArr[2]);
 let prosto9 = prosto8.replace(/_/, thirdArr[3]);
 console.log(prosto9);
 
+// 13 Given mixed array of numbers, strings, booleans, nulls and undefined. Filter array and get all the numbers
+// in a separate array. Arrange them such as from the beginning are the odds and from the ending the
+// evens.
+
+let prostoArray = [8, 0, 1, "hey", 12, 5, true, "2", null, 7, 3];
+let numArray = [];
+for (i of prostoArray) {
+  if (typeof i === "number" && i % 2 == 0) numArray.push(i);
+  if (typeof i === "number" && i % 2 > 0) numArray.unshift(i);
+}
+console.log(numArray);
+//14
+function numOfType() {
+  let prostoArray = [1, "10", "hi", 2, 3];
+  let numArray = [];
+  let strArray = [];
+  for (i of prostoArray) {
+    if (typeof i === "number") numArray.push(i);
+    if (typeof i === "string") strArray.push(i);
+  }
+  console.log(
+    "Numbers: " + numArray.length + ", " + "Strings: " + strArray.length
+  );
+}
+
+//16
+function findNumber() {
+  let myArray = [21, -9, 15, 2116, -71, 33];
+  for (i in myArray) {
+    let numToFind = -71;
+    if ((i = numToFind)) console.log(myArray.indexOf(i));
+    break;
+  }
+}
+
 //17 Given a sentence as a string. Split it according to space and comma and create an array consisting of the
 // words of the array.
 function splitSentence() {
@@ -127,15 +205,13 @@ function splitSentence() {
   let secondStupidStr = "Keep your friends close, but your enemies closer.";
   let firstArr = stupidStr.split(" ");
   let secondArr = secondStupidStr.split(" ");
-  let prosto = Array.from(firstArr);
-  let prosto2 = Array.from(secondArr);
   console.log(secondArr);
   console.log(firstArr);
 }
 splitSentence();
+
 //19. Given an array consisting from the arrays of numbers (like a two-dimensional array). Find sum of each
 // row and print them as an array.
-
 function firstArraySum() {
   let myArray = [
     [3, 4, 5],
