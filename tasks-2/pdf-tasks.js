@@ -139,6 +139,29 @@ function fibonacci() {
   }
 }
 fibonacci();
+//11 Insert a number. Calculate product and sum of the digits of the number. If product is divisible by the sum,
+// print the quotient, otherwise print the remainder.
+let digit = 455;
+if (digit === 0) console.log("cannot calculate");
+let sum = digit
+  .toString()
+  .split("")
+  .map(Number)
+  .reduce(function (a, b) {
+    return a + b;
+  });
+let prod = digit
+  .toString()
+  .split("")
+  .map(Number)
+  .reduce(function (a, b) {
+    return a * b;
+  });
+if (prod % sum == 0) {
+  console.log(`quotient is ${prod / sum}`);
+} else if (prod % sum > 0) {
+  console.log(`remainder is ${prod % sum}`);
+}
 
 // 12 Given a sentence with missing words and an array of words. Replace all ‘_ʼ in a sentence with the words
 // from the array.
