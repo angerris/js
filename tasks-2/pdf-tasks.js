@@ -87,7 +87,7 @@ if (myArray.includes(0)) {
   }
 }
 
-//7 Insert a digit and a number. Check whetherthe digits contains in the number or not.
+//7 Insert a digit and a number. Check whether the digits contains in the number or not.
 function checkIfContains() {
   let firstNum = "2463";
   let secondNum = "4";
@@ -248,7 +248,22 @@ function splitSentence() {
   console.log(firstArr);
 }
 splitSentence();
-
+//18
+function a() {
+  let myArray = [4, 3, 0, 9];
+  let newArr = new Array(Math.max.apply(null, myArray)).fill(undefined);
+  for (i of myArray) {
+    myArray.sort(compareFunction);
+  }
+  function compareFunction(a, b) {
+    return a - b;
+  }
+  for (i = 0; i < myArray.length; i++) {
+    newArr.splice(myArray[i], 1, myArray[i]);
+  }
+  console.log(newArr);
+}
+a();
 //19. Given an array consisting from the arrays of numbers (like a two-dimensional array). Find sum of each
 // row and print them as an array.
 function firstArraySum() {
