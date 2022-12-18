@@ -35,20 +35,27 @@ toEndFirst();
 
 //4 Check if a number is a multiple of 3, 5 or 7 and output the appropriate message.
 let ifMultiple = prompt("enter a number please", 0);
-let three = 3;
-let five = 5;
-let seven = 7;
-if (ifMultiple % three === 0) {
+
+if (ifMultiple % 3 === 0 && ifMultiple % 5 === 0 && ifMultiple % 7 === 0) {
+  alert(`${ifMultiple} ` + "is a multiple of 3, 5 and 7");
+} else if (ifMultiple % 3 === 0 && ifMultiple % 5 === 0) {
+  alert(`${ifMultiple} ` + "is a multiple of 3 and 5");
+} else if (ifMultiple % 3 === 0 && ifMultiple % 7 === 0) {
+  alert(`${ifMultiple} ` + "is a multiple of 3 and 7");
+} else if (ifMultiple % 5 === 0 && ifMultiple % 7 === 0) {
+  alert(`${ifMultiple} ` + "is a multiple of 5 and 7");
+} else if (ifMultiple % 3 === 0) {
   alert(`${ifMultiple} ` + "is a multiple of 3");
-} else if (ifMultiple % five === 0) {
+} else if (ifMultiple % 5 === 0) {
   alert(`${ifMultiple} ` + "is a multiple of 5");
-} else if (ifMultiple % seven === 0) {
+} else if (ifMultiple % 7 === 0) {
   alert(`${ifMultiple} ` + "is a multiple of 7");
 } else if (isNaN(ifMultiple)) {
   prompt("enter a number please", 0);
-} else if (ifMultiple % three || five || seven > 0) {
+} else if (ifMultiple % 3 || 5 || 7 > 0) {
   alert("number is not a multiple of 3,5 or 7");
 }
+
 // 5 Given three numbers. Sort them by the ascending order.
 let newArr = [46, 26, 78];
 let arr = [23, -456, 0];
