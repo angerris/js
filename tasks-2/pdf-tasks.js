@@ -68,24 +68,21 @@ console.log(newArr, arr);
 function compareFunction(a, b) {
   return a - b;
 }
-//6 prosto ostavlyu eto zdes
-let myArray = [-14, 5, 0];
-let mySecArray = [-8, 9, -6];
-let myThirdArray = [4, 19, -2];
+//6
+let myArray = [-7, -9, 5];
 
-for (let i of myArray) {
-  if (Math.sign(i) == 0) {
-    console.log("unsigned");
+if (myArray.includes(0)) {
+  console.log("unsigned");
+} else {
+  let minus = 0;
+  for (i of myArray) {
+    if (Math.sign(i) == -1) {
+      minus++;
+    }
   }
-}
-
-for (let p of mySecArray) {
-  if (Math.sign(p) == 1) {
+  if (minus % 2 === 0) {
     console.log("+");
-  }
-}
-for (let n of myThirdArray) {
-  if (Math.sign(n) == -1) {
+  } else {
     console.log("-");
   }
 }
