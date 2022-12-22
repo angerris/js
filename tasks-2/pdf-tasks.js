@@ -169,6 +169,7 @@ if (prod % sum == 0) {
 
 // 12 Given a sentence with missing words and an array of words. Replace all ‘_ʼ in a sentence with the words
 // from the array.
+//??
 let firstStr = "_, we have a _.";
 let firstArr = ["Houston", "problem"];
 let prosto1 = firstStr.replace(/_/, firstArr[0]);
@@ -227,7 +228,7 @@ function sumOfLength() {
   console.log(min + max);
 }
 
-//16
+//16 ??how to find the closest number
 function findNumber() {
   let myArray = [21, -9, 15, 2116, -71, 33];
   for (i in myArray) {
@@ -266,6 +267,7 @@ function a() {
 a();
 //19. Given an array consisting from the arrays of numbers (like a two-dimensional array). Find sum of each
 // row and print them as an array.
+//?
 function firstArraySum() {
   let myArray = [
     [3, 4, 5],
@@ -313,6 +315,7 @@ function thirdArray() {
 thirdArray();
 
 //20 print the pattern
+//bruh ??
 let prostoArr = ["1"];
 let prosto2Arr = ["2 ", "6"];
 let prosto3Arr = ["3 ", "7 ", "10"];
